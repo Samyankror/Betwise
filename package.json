@@ -1,0 +1,28 @@
+{
+  "name": "cric",
+  "version": "1.0.0",
+  "description": "Frontend for  live betting platform",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon server/index.js",
+    "start": "node server/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Samyankror/Betwise.git"
+  },
+  "keywords": [],
+  "author": "samyank ror && parmeet singh",
+  "license": "ISC",
+  "type": "module",
+  "bugs": {
+    "url": "https://github.com/Samyankror/Betwise/issues"
+  },
+  "homepage": "https://github.com/Samyankror/Betwise#readme",
+  "dependencies": {
+    "dotenv": "^17.0.1",
+    "express": "^5.1.0",
+    "mongoose": "^8.16.1",
+    "nodemon": "^3.1.10"
+  }
+}

@@ -1,14 +1,24 @@
-// import { useState } from 'react'
 
-import Login from './components/Login.jsx'
+import SignIn from './pages/SignIn.jsx'
+import SignUp from './pages/SignUp.jsx'
+import Home from './pages/Home.jsx'
+import { BrowserRouter, Routes,Route } from 'react-router-dom'
 
-// import Login from './components/login';
+
 
 function App() {
 
   return (
     <>
-    <Login />
+     <BrowserRouter>
+        <Routes>
+          <Route path='/' element={<Home />} />
+          <Route path='/sign-in' element={<SignIn/>} />
+          <Route path='/sign-up' element={<SignUp/>} />
+        
+        </Routes>
+    </BrowserRouter>
+    
     </>
   )
 }
