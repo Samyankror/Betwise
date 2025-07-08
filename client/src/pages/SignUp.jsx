@@ -1,8 +1,7 @@
 import { FcGoogle } from 'react-icons/fc'; // Google icon
-import bgImage from '../images/login_bg.avif';
-import { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
 import  {Link} from 'react-router-dom'
+import { useNavigate } from 'react-router-dom';
+import { useState } from 'react';
 
 function SignUp() {
      const navigate = useNavigate();
@@ -34,7 +33,7 @@ function SignUp() {
     <div
       className="flex items-center justify-center min-h-screen bg-cover bg-center bg-slate-800"
     >
-      <div className= "backdrop-blur-lg p-8  rounded-2xl shadow-md w-[420px] border-10 border-white">
+<div className="w-[90%] max-w-md backdrop-blur-lg p-8 rounded-2xl shadow-2xl border border-white">
         <h2 className="text-3xl font-semibold mb-6 text-center text-white">Sign up</h2>
         <form onSubmit = {handleSubmit} className='flex flex-col gap-4'>
               <div className="">
@@ -75,7 +74,7 @@ function SignUp() {
           </div>
           <button
             type="submit"
-            className="w-full bg-blue-600 text-white text-xl font-semibold cursor-pointer py-2 rounded-lg hover:bg-blue-700 transition duration-200"
+            className="w-full bg-gradient-to-r from-blue-500 to-indigo-600 text-white text-xl font-semibold py-2 rounded-lg hover:from-indigo-600 hover:to-purple-600 transition duration-300 flex justify-center items-center gap-2"
           >
             Sign up
           </button>
