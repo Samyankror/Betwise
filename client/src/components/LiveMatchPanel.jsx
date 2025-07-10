@@ -5,9 +5,14 @@ const LiveMatchPanel = () => {
   };
 
   return (
-    <div className="bg-gradient-to-r from-blue-900 to-indigo-800 text-white py-4 px-6 shadow-lg flex justify-between items-center">
+  <div
+  className="cursor-pointer hover:scale-[1.01] transition-transform duration-300 bg-gradient-to-r from-slate-700 to-slate-900 text-white py-4 px-6 shadow-lg flex justify-between items-center"
+  onClick={() => alert('Opening full match page...')}
+>
+
+
       <div>
-        <h2 className="text-lg font-bold text-yellow-300 animate-pulse">{featuredMatch.status}</h2>
+        <h2 className="text-lg font-bold text-yellow-400 animate-pulse">{featuredMatch.status}</h2>
         <p className="text-xl font-semibold">{featuredMatch.teams}</p>
         <p className="text-sm text-gray-200">{featuredMatch.score}</p>
       </div>
