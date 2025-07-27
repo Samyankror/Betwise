@@ -1,10 +1,12 @@
 import { Link, useNavigate } from 'react-router-dom';
-
-import { FcGoogle } from 'react-icons/fc'; // Google icon
+import OAuth from '../components/OAuth.jsx';
 import { useState } from 'react';
+import { signInStart, signInSuccess, signInFailure } from '../redux/user/userSlice';
+import  {useDispatch} from  'react-redux';
 
 function Login() {
    const navigate = useNavigate();
+   const dispatch = useDispatch();
    const [formData,setFormData] = useState({});
    const handleChange = (e)=>{
        setFormData({...formData,[e.target.id]:e.target.value});
@@ -14,6 +16,7 @@ function Login() {
     e.preventDefault();
     
     try{
+      dispatch(signInStart());
     const res = await fetch('/api/auth/signin',{
            method:'POST',
             headers : {
@@ -23,10 +26,14 @@ function Login() {
     })
 
     const data = await res.json();
+    if(data.success){
+      dispatch(signInSuccess(data.user));
+    }
     console.log(data);
     navigate('/')
     
   }catch(error){
+    signInFailure(error.message);
     console.log(error);
   }
    }
@@ -64,7 +71,8 @@ function Login() {
           </div>
           <button
             type="submit"
-            className="w-full bg-gradient-to-r from-blue-500 to-indigo-600 text-white text-xl font-semibold py-2 rounded-lg hover:from-indigo-600 hover:to-purple-600 transition duration-300 flex justify-center items-center gap-2"
+            className="w-full bg-gradient-to-r from-blue-500 to-indigo-600 text-white text-xl cursor-pointer
+            font-semibold py-2 rounded-lg hover:from-indigo-600 hover:to-purple-600 transition duration-300 flex justify-center items-center gap-2"
           >
             Sign in
           </button>
@@ -78,10 +86,7 @@ function Login() {
         </div>
 
         {/* Google Sign In Button */}
-        <button className="w-full border-none border-gray-300 bg-white text-xl cursor-pointer font-semibold text-black py-2 rounded-lg flex items-center justify-center gap-2 hover:bg-gray-100 transition duration-200">
-          <FcGoogle size={20} />
-          Continue with Google
-        </button>
+       <OAuth/>
 
         {/* Signup Link */}
         <p className="text-white text-center mt-4 text-sm">

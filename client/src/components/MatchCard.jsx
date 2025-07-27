@@ -1,8 +1,9 @@
 import { FaBolt, FaTrophy } from 'react-icons/fa';
+import {motion} from "framer-motion";
 
 const MatchCard = ({ match }) => {
   return (
-    <div
+    <motion.div
       className="bg-gray-900 rounded-2xl p-5 flex flex-col gap-3 shadow-md hover:shadow-xl hover:bg-gray-800 transition-all duration-200 border border-gray-700"
       whileHover={{ scale: 1.03 }}
     >
@@ -51,7 +52,7 @@ const MatchCard = ({ match }) => {
           <FaTrophy /> Bet on {match.teams.split('vs')[1].trim()}
         </button>
       </div>
-    </div>
+    </motion.div>
   );
 };
 

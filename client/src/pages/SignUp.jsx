@@ -1,4 +1,4 @@
-import { FcGoogle } from 'react-icons/fc'; // Google icon
+import OAuth from '../components/OAuth.jsx';
 import  {Link} from 'react-router-dom'
 import { useNavigate } from 'react-router-dom';
 import { useState } from 'react';
@@ -29,6 +29,7 @@ function SignUp() {
             console.log(error);
         }
     }
+
   return (
     <div
       className="flex items-center justify-center min-h-screen bg-cover bg-center bg-slate-800"
@@ -88,11 +89,7 @@ function SignUp() {
         </div>
 
         {/* Google Sign In Button */}
-        <button className="w-full border-none border-gray-300 bg-white text-xl cursor-pointer font-semibold text-black py-2 rounded-lg flex items-center justify-center gap-2 hover:bg-gray-100 transition duration-200">
-          <FcGoogle size={20} />
-          Continue with Google
-        </button>
-
+       <OAuth />
         {/* Signup Link */}
         <p className="text-white text-center mt-4 text-sm">
            Already have an account?{' '}

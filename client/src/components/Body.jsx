@@ -5,11 +5,11 @@ import MatchCard from './MatchCard';
 const liveMatches = [
   {id: 1, teams: 'India vs Australia', tournament: 'T20 World Cup', status: '3rd Over', scoreA: 'India: 24/1', scoreB: 'Australia: Yet to bat', odds: '1.7x', prediction: 'India 65%', predictionPercent: '65%',
  },
- {id: 1, teams: 'India vs Australia', tournament: 'T20 World Cup', status: '3rd Over', scoreA: 'India: 24/1', scoreB: 'Australia: Yet to bat', odds: '1.7x', prediction: 'India 65%', predictionPercent: '65%',
+ {id: 2, teams: 'India vs Australia', tournament: 'T20 World Cup', status: '3rd Over', scoreA: 'India: 24/1', scoreB: 'Australia: Yet to bat', odds: '1.7x', prediction: 'India 65%', predictionPercent: '65%',
  },
-  {id: 1, teams: 'India vs Australia', tournament: 'T20 World Cup', status: '3rd Over', scoreA: 'India: 24/1', scoreB: 'Australia: Yet to bat', odds: '1.7x', prediction: 'India 65%', predictionPercent: '65%',
+  {id: 3, teams: 'India vs Australia', tournament: 'T20 World Cup', status: '3rd Over', scoreA: 'India: 24/1', scoreB: 'Australia: Yet to bat', odds: '1.7x', prediction: 'India 65%', predictionPercent: '65%',
  },
-  {id: 1, teams: 'India vs Australia', tournament: 'T20 World Cup', status: '3rd Over', scoreA: 'India: 24/1', scoreB: 'Australia: Yet to bat', odds: '1.7x', prediction: 'India 65%', predictionPercent: '65%',
+  {id: 4, teams: 'India vs Australia', tournament: 'T20 World Cup', status: '3rd Over', scoreA: 'India: 24/1', scoreB: 'Australia: Yet to bat', odds: '1.7x', prediction: 'India 65%', predictionPercent: '65%',
  },
 ];
 
