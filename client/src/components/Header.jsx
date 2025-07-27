@@ -10,6 +10,9 @@ const Header = () => {
     e.preventDefault();
   };
 
+  {/* User Icon */}
+          const [showSidebar, setShowSidebar] = useState(false);
+
   return (
     <header className="sticky top-0 z-50 bg-gray-900 text-white shadow-md">
       <div className="max-w-7xl mx-auto px-6 py-4 flex flex-col md:flex-row justify-between items-center gap-4">
@@ -47,9 +50,46 @@ const Header = () => {
           </form>
 
           {/* User Icon */}
-          <Link to="/account" className="text-white hover:text-blue-400 text-2xl">
+
+          <button
+            onClick={() => setShowSidebar(!showSidebar)}
+            className="text-white hover:text-blue-400 text-2xl">
             <FaUserCircle />
-          </Link>
+          </button>
+          {showSidebar && (
+  <>
+    {/* Backdrop */}
+    <div
+  className="fixed inset-0 bg-black/50 z-40 transition-opacity duration-300"
+    onClick={() => setShowSidebar(false)}
+    ></div>
+
+    {/* Sidebar */}
+    <div className="fixed top-0 right-0 w-64 h-full bg-gray-800 z-50 shadow-lg p-4">
+      <div className="flex justify-between items-center mb-4">
+        <h2 className="text-lg font-semibold text-white">Account</h2>
+        <button
+          onClick={() => setShowSidebar(false)}
+          className="text-white text-2xl"
+        >
+          &times;
+        </button>
+      </div>
+      <div className="flex flex-col items-center justify-center mb-6">
+        <FaUserCircle className="text-white text-6xl mb-2" />
+      </div>
+      <ul className="space-y-4 text-white">
+        <li className="hover:text-blue-400 cursor-pointer">My Profile</li>
+        <li className="hover:text-blue-400 cursor-pointer">Wallet</li>
+        <li className="hover:text-blue-400 cursor-pointer">My Bets</li>
+        <li className="hover:text-blue-400 cursor-pointer">Settings</li>
+        <li className="hover:text-red-400 cursor-pointer">Logout</li>
+      </ul>
+    </div>
+  </>
+)}
+
+
         </div>
       </div>
     </header>

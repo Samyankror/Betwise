@@ -1,4 +1,5 @@
 import { FaChartLine, FaSearch, FaTrophy } from 'react-icons/fa';
+import { useEffect, useState } from 'react';
 
 import MatchCard from './MatchCard';
 
@@ -13,16 +14,40 @@ const liveMatches = [
  },
 ];
 
+
+
 const Body = () => {
+
+  const [showFade, setShowFade] = useState(true);
+const [hideCompletely, setHideCompletely] = useState(false);
+
+useEffect(() => {
+  const fadeTimer = setTimeout(() => setShowFade(false), 2500); // fade out
+  const removeTimer = setTimeout(() => setHideCompletely(true), 3500); // remove from DOM
+  return () => {
+    clearTimeout(fadeTimer);
+    clearTimeout(removeTimer);
+  };
+}, []);
+
   return (
     
     <main className="flex flex-col gap-8 items-center py-10 px-4 md:px-12 bg-slate-800 text-white">
 
     {/* Welcome banner */}
-    <section className="w-full text-center">
-        <h1 className="text-4xl font-bold text-blue-300 mb-2">Welcome to BetWise</h1>
-        <p className="text-gray-300">Track, bet, and win on live cricket matches.</p>
-    </section>
+    {!hideCompletely && (
+  <section
+    className={`w-full text-center overflow-hidden transition-all duration-700 ${
+      showFade ? 'max-h-40 opacity-100 mt-8' : 'max-h-0 opacity-0 mt-0'
+    }`}
+  >
+    <div>
+      <h1 className="text-3xl font-bold text-blue-400">Welcome to BetWise</h1>
+      <p className="text-white mt-2">Track, bet, and win on live cricket matches.</p>
+    </div>
+  </section>
+)}
+
 
       {/* Search bar */}
     <div className="w-full max-w-xl flex items-center bg-gray-700 rounded-lg px-4 py-2 shadow">
